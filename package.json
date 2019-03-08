@@ -1,6 +1,6 @@
 {
-  "name": "google-idtoken-verifier",
-  "version": "0.0.1",
+  "name": "google-idtoken-auth",
+  "version": "1.0.0",
   "description": "Node.js middleware to validate Google ID tokens in the request.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcosvidolin/google-idtoken-verifier.git"
+    "url": "git+https://github.com/marcosvidolin/google-idtoken-auth.git"
   },
   "keywords": [
     "google",
@@ -24,9 +24,9 @@
   "author": "Marcos Alexandre Vidolin de Lima <marcosvidolin@gmail.com> (http://vidolima.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marcosvidolin/google-idtoken-verifier/issues"
+    "url": "https://github.com/marcosvidolin/google-idtoken-auth/issues"
   },
-  "homepage": "https://github.com/marcosvidolin/google-idtoken-verifier#readme",
+  "homepage": "https://github.com/marcosvidolin/google-idtoken-auth#readme",
   "dependencies": {
     "google-auth-library": "^3.0.1"
   }

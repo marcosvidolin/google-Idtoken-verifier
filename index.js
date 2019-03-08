@@ -1,5 +1,5 @@
 /*!
- * google-idtoken-verifier
+ * google-idtoken-auth
  * Copyright(c) 2019 Marcos A. Vidolin de Lima
  * MIT Licensed
  */
