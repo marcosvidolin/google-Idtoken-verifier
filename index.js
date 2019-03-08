@@ -1,58 +1,92 @@
-'use strict'
+/*!
+ * google-idtoken-verifier
+ * Copyright(c) 2019 Marcos A. Vidolin de Lima
+ * MIT Licensed
+ */
+
+'use strict';
 
 /**
  * Module dependencies.
  * @private
  */
-const { OAuth2Client } = require('google-auth-library');
+const {
+  OAuth2Client
+} = require('google-auth-library');
 
 /**
  * Module exports.
+ * @public
  */
-module.exports = googleIdTokenVerifier;
+module.exports = {
+  googleIdTokenVerifier
+};
 
 /**
- * TODO.
+ * Validates the request according to the options object.
  *
  * @param {Object} [options]
  * @return {Function} middleware
  * @public
  */
-function googleIdTokenVerifier(options) {
-    var opts = options || {};
+var googleIdTokenVerifier = function (options) {
 
-    // options
-    const googleClientId = opts.clientId;
-    const tokenHeaderName = opts.tokenHeaderName;
-    const gSuiteDomains = Array.isArray(opts.gSuiteDomains) ? opts.gSuiteDomains : [opts.gSuiteDomains];
+  var opts = options || {};
 
-    if (!googleClientId) {
-        // TODO: error
+  // options
+  const googleClientId = opts.clientId;
+  const tokenHeaderName = opts.tokenHeaderName;
+  const gSuiteDomains = Array.isArray(opts.gSuiteDomains) ? opts.gSuiteDomains : [opts.gSuiteDomains];
+
+  if (!googleClientId) {
+    throw new Error("Google Client ID not specified.");
+  }
+
+  return googleIdTokenVerifier = async (req, res, next) => {
+
+    // ignore HTTP handshake
+    if (req.method === 'OPTIONS') {
+      return next();
     }
 
-    async function verify() {
-        const client = new OAuth2Client(googleClientId);
-        const ticket = await client.verifyIdToken({
-            idToken: token,
-            audience: googleClientId
-        });
-        const payload = ticket.getPayload();
-        const userid = payload['sub'];
-        // If request specified a G Suite domain:
-        const domain = payload['hd'];
-        if (!gSuiteDomains.includes(domain)) {
-            // TODO:
-        }
+    const token = req.headers[tokenHeaderName];
 
-        return payload;
+    if (!token) {
+      res.status(403).json({
+        error: "Token not specified"
+      });
+      return next("Token not specified.");
     }
 
-    return function googleIdTokenVerifier(req, res, next) {
-        const token = req.headers[tokenHeaderName];
-        if (!token) {
-            // TODO:
-        }
-        req.googleProfileInfo = verify().catch(console.error);
-        next();
+    const client = new OAuth2Client(googleClientId);
+    var ticket = null;
+    try {
+      ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: googleClientId
+      });
+    } catch (err) {
+      res.status(401).json({
+        error: "Invalid token"
+      });
+      return next("Invalid token.");
     }
+
+    const payload = ticket.getPayload();
+    // If request specified a G Suite domain:
+    const domain = payload['hd'];
+
+    if (!gSuiteDomains.includes(domain)) {
+      res.status(403).json({
+        error: "Invalid G Suite Domain"
+      });
+      return next("Invalid G Suite Domain.");
+    }
+
+    req.googleProfileInfo = payload;
+    req.googleProfileInfo.username = payload.email.split("@")[0];
+
+    return next();
+  }
+
 }
