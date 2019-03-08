@@ -15,14 +15,6 @@ const {
 } = require('google-auth-library');
 
 /**
- * Module exports.
- * @public
- */
-module.exports = {
-  googleIdTokenVerifier
-};
-
-/**
  * Validates the request according to the options object.
  *
  * @param {Object} [options]
@@ -90,3 +82,11 @@ var googleIdTokenVerifier = function (options) {
   }
 
 }
+
+/**
+ * Module exports.
+ * @public
+ */
+module.exports = {
+  googleIdTokenVerifier
+};
