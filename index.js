@@ -27,7 +27,7 @@ var googleIdTokenVerifier = function (options) {
 
   // options
   const googleClientId = opts.clientId;
-  const tokenHeaderName = opts.tokenHeaderName;
+  const tokenHeaderName = opts.tokenHeaderName || 'x-googleid-token';
   const gSuiteDomains = Array.isArray(opts.gSuiteDomains) ? opts.gSuiteDomains : [opts.gSuiteDomains];
 
   if (!googleClientId) {
