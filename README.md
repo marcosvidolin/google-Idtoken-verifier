@@ -14,7 +14,7 @@ $ npm install google-idtoken-auth
 | Propertie | Type | Default | Required | Description |
 |---|---|---|---|---|
 | clientId | String | | true | Specify the Google Client ID |
-| tokenHeaderName | String | false | x-googleid-token | Custom header name to retrievi the Google ID Token |
+| tokenHeaderName | String | x-googleid-token | false | Custom header name to retrievi the Google ID Token |
 | gSuiteDomains | Array | | false | Specify a G Suite domain |
 
 ## Example
