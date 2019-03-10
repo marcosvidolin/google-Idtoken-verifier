@@ -3,8 +3,7 @@
  * Copyright(c) 2019 Marcos A. Vidolin de Lima
  * MIT Licensed
  */
-
-'use strict';
+"use strict";
 
 /**
  * Module dependencies.
@@ -12,7 +11,7 @@
  */
 const {
   OAuth2Client
-} = require('google-auth-library');
+} = require("google-auth-library");
 
 /**
  * Validates the request according to the options object.
@@ -27,7 +26,7 @@ var googleIdTokenVerifier = function (options) {
 
   // options
   const googleClientId = opts.clientId;
-  const tokenHeaderName = opts.tokenHeaderName || 'x-googleid-token';
+  const tokenHeaderName = opts.tokenHeaderName || "x-googleid-token";
   const gSuiteDomains = Array.isArray(opts.gSuiteDomains) ? opts.gSuiteDomains : [opts.gSuiteDomains];
 
   if (!googleClientId) {
@@ -37,7 +36,7 @@ var googleIdTokenVerifier = function (options) {
   return googleIdTokenVerifier = async (req, res, next) => {
 
     // ignore HTTP handshake
-    if (req.method === 'OPTIONS') {
+    if (req.method === "OPTIONS") {
       return next();
     }
 
@@ -66,7 +65,7 @@ var googleIdTokenVerifier = function (options) {
 
     const payload = ticket.getPayload();
     // If request specified a G Suite domain:
-    const domain = payload['hd'];
+    const domain = payload["hd"];
 
     if (!gSuiteDomains.includes(domain)) {
       res.status(403).json({
@@ -81,7 +80,7 @@ var googleIdTokenVerifier = function (options) {
     return next();
   }
 
-}
+};
 
 /**
  * Module exports.
