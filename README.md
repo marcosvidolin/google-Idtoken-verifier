@@ -1,8 +1,6 @@
 # google-token-auth
 
-[![npm version](https://badge.fury.io/js/google-idtoken-auth.svg)](https://badge.fury.io/js/google-idtoken-auth)
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/49992b6c073648c192662bdd7de6f087)](https://www.codacy.com/app/marcosvidolin/google-idtoken-auth?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcosvidolin/google-idtoken-auth&amp;utm_campaign=Badge_Grade)
+[![npm version](https://badge.fury.io/js/google-idtoken-auth.svg)](https://badge.fury.io/js/google-idtoken-auth) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/49992b6c073648c192662bdd7de6f087)](https://www.codacy.com/app/marcosvidolin/google-idtoken-auth?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcosvidolin/google-idtoken-auth&amp;utm_campaign=Badge_Grade)
 
 Node.js middleware to validate `Google ID Tokens` in the `backend server`.
 Validade the request token, get all the Google ID Token fields and populate the `req.googleProfileInfo`.
