@@ -47,5 +47,4 @@ app.listen(8080);
 [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in)
 [Authenticate with a backend server](https://developers.google.com/identity/sign-in/web/backend-auth)
 
-
 ### [MIT Licensed](LICENSE)

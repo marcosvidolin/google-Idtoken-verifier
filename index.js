@@ -78,7 +78,7 @@ var googleIdTokenVerifier = function (options) {
     req.googleProfileInfo.username = payload.email.split("@")[0];
 
     return next();
-  }
+  };
 
 };
 
