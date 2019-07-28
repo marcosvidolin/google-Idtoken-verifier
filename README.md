@@ -43,10 +43,13 @@ app.listen(8080);
 // curl -H "x-googleid-token: {GOOGLE-ID-TOKEN-HERE}" http://127.0.0.1:8080
 ```
 
-### See more
+## See more
 
 [Google Sign-In](https://developers.google.com/identity/sign-in/web/sign-in)  
 
 [Authenticate with a backend server](https://developers.google.com/identity/sign-in/web/backend-auth)
 
-### [MIT Licensed](LICENSE)
+## [MIT Licensed](LICENSE)
+
+## Contributors
+[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/0)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/0)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/1)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/1)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/2)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/2)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/3)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/3)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/4)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/4)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/5)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/5)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/6)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/6)[![](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/images/7)](https://sourcerer.io/fame/marcosvidolin/marcosvidolin/google-idtoken-auth/links/7)
