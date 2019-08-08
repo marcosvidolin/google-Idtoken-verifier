@@ -4,7 +4,6 @@
   "description": "Node.js middleware to validate Google ID tokens in the request.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
