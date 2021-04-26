@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/marcosvidolin/google-idtoken-auth#readme",
   "dependencies": {
-    "google-auth-library": "^5.0.0"
+    "google-auth-library": "^6.0.0"
   }
 }
